@@ -7,3 +7,4 @@ authors = ["Maya MacLean"]
 rust_sodium = "0.9.0"
 blake2_c = "0.3.1"
 openssl = { version = "0.10.11", features = ["vendored"] }
+rust-argon2 = "0.3.0"

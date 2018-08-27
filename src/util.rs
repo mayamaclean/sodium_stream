@@ -22,8 +22,8 @@ use argon2::{ThreadMode, Variant, Version};
 
 pub fn secrets_from_argon(password: &[u8], salt: &[u8], key: &[u8], max_threads: usize, max_mem: usize) -> Result<Vec<u8>, argon2::Error> {
 
-    let max = if max_mem/32 > 128*1024*1024 { max_mem/32 }
-              else                          { 128*1024 };
+    let max = if max_mem > 128*1024 { max_mem }
+              else                  { 128*1024 };
 
     let argon = argon2::Config {
         ad          : &[],
